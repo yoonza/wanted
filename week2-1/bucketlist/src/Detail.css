@@ -1,0 +1,58 @@
+/* detail.css */
+
+.detail-container {
+    max-width: 400px;
+    max-height: 500px;
+    border: 2px solid gray;
+    margin: 20% auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.detail-container input[type="text"] {
+    width: calc(100% - 20px);
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer; /* 커서가 깜빡이게 해주는 효과 */
+}
+
+p {
+    color: gray;
+}
+
+.detail-container button {
+    width: 100%;
+    padding: 10px 0;
+    border: none;
+    background-color: #76df6d;
+    color: white;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.detail-container button:hover {
+    background-color: #ddd;
+}
+
+.detail-container h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.detail-container a {
+    display: block;
+    margin-top: 20px;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.detail-container a:hover {
+    color: red;
+}

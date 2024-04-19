@@ -1,0 +1,115 @@
+- Mock Api를 사용할 것이다 !
+: Mock는 가상의, 가짜의! (진짜인 척 하는 API)
+
+- Rest API : 소프트웨어 아키텍처의 한 형태 - (자원/행위/표현)으로 구성되어있다. 
+: 어딘가로 요청을 보낼거야 ! 
+: (어떠한 방식으로) - GET/POST/PUT , CRUD
+: 무엇인가를 주고 받을거야
+: http 프로토콜을 이용한 통신 방식 
+
+- 가짜 API를 만들기 위해서 JSON-server 패키지를 사용할 것이다. 
+1. 패키지를 가져오는(add/install)
+: npx create ~ - 프로젝트를 생성
+: 라우팅/상태관리 도구 등 설치
+
+❗️ 항시 프로젝트가 존재해야 도구를 설치할 수 있음. 
+
+$ yarn init -y : 프로젝트를 시작하는 방법 - 초기 설정
+$ yarn add json-server : json-server 설치 
+db.json이라는 파일을 만들어서 파일 설정
+{
+    "key값": "value값",
+}
+$ yarn json-server --watch db.json --port 5001: api 생성해주기 (port:5001) // 작업할 때 항상 켜두기!
+
+postman : 요청을 대신 처리해주는 도구 
+post : 생성 / 수정 
+id : 중복되면 구별하기 힘듬(auto값으로 생성하자) 
+
+- 리액트 시작 시, ~ start (yarn or npm ~)
+/ scripts 파일에 명령어 등록해놓으면 쉽게 시작 가능 
+
+- npx : npm yarn과 다르다 ?
+: npm, yarn: package manager
+: npx: package runner
+
+< 네트워크 요청: 클라이언트에서 서버로 요청할 때, 비동기로 요청이 나간다. > - 요청보내고 클라이언트는 일 처리 
+
+- Client가 Server에 요청을 보내는 방법
+1. XMLHTTPRequest - 서버 통신을 위한 객체
+2. Fetch 
+3. Axios
+
+- 자바스크립트 스레드는 1개 (싱글스레드)
+: 한번에 한개만 처리 가능!! - 처리 중에 다른일을 할 수 없다. 
+: 메모리와 처리기(콜 스택)
+
+- javascript를 도와주는 친구 webapi
+
+
+- 동기 / 비동기 
+: 동기 - 병렬 수행
+1. 요청에 대한 응답을 바로 준다. 
+2. 완료여부?는 모르겠다.
+3. 첫번째 요청에 대한 응답이 올동안 다음 요청을 못받는다. 
+
+- 동시성: 여러 개를 동시에 처리하는 것 같아 보임 (사실상 한개씩 수행중)
+
+: 비동기
+1. 응답 기다리지 않고 다음 요청 바로 받는다. (안 기다린다.) like pipeline ?
+
+자바스크립트는 일반적으로 동기 방식 / 비동기도 선택적으로 함. 
+- 하나가 끝나야 그다음걸 수행한다. 
+
+window.setTimeout(() => {
+    window.alert('dooza,hi!');
+}, 1000); -> 비동기(일을 대기하게 만듬): 다음 명령을 먼저 수행하게 할 수 있음. 
+
+heap: 변수들 
+stack: 할일 목록들이 쌓여있음. 
+web api 
+
+
+- v8 engine의 구조 : 크롬이 쓰는 엔진 !
+settimeout으로 스택의 일을 webapi가 대신 해준다.
+맡겨놓고 stack은 그다음 일을 하고 있음. 
+webapi가 일을 수행해놓으면 콜백 큐에 완료된 걸 넘겨놓는다 (나 일 다했어 ~)
+이벤트루프가 지켜보다가 스택에 다시 완료된 일을 끼게 만들어줌.(얘 일 다했대라고 알려줌)
+
+$ yarn add axios
+
+- callback-hell은 코드를 복잡하게 만든다.. (절대 클린코드가 될 수 없서.)
+function a(끝나면 할일) {
+    a의 로직들 ~~
+
+    에러처리를 해야하는 순간
+
+    if(에러났니?) {
+        다른 일해라. 
+    }
+    else {
+        하려던 거 하자
+        function ...
+        // 에러 핸들링 점점 복잡해짐 ...;;
+    }
+}
+
+그래서, 에러 핸들링이 편한걸 쓰자 
+
+// fetch / axios
+
+- intercepters : 응답을 클라이언트에서 받아서 App으로 요청을 넣어줌. 그 순간들을 잡아주는 도구
+-> 헤더 설정을 할때, 어떠한 요청을 가로채서 미리 설정을 입혀놓는 역할 -> 액션을 더해줌 
+: 내보낼때 / 가져올때 두 가지의 인터셉터가 존재 
+
+- access token : 수명이 짧은 토큰(금방 소멸됨) 
+- refresh token : access token이 만료되면 다시 갱신요청 (핑퐁)
+
+// 숙제: intercepter 만들어오기
+
+curl http://localhost:5001/sleep_times -X GET 
+curl http://localhost:5001/sleep_times -X POST -d
+
+post: 요청 보내기(기존 데이터에 새롭게 입력한 데이터를 추가해준다.)
+
+id값은 중복이 생길 수 있으니, value값만 post해서 요청을 보내는 것이 좋다 (클라이언트가 중복 값을 구분할 수 없음)

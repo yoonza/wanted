@@ -1,0 +1,37 @@
+network 요청을 하고 받은 결과를 브라우저에 저장해보자 
+
+소프트웨어의 원자재는 사람
+변경이 쉽게 코드를 짜야한다. 
+1) 알아보기 쉬워야한다. 
+2) 복잡하면 안된다. 
+3) 중복되면 안된다. 
+
+package.json - 명령어 단축키를 설정할 수 있다. 
+
+같은 서버 패키지
+json-server
+json-server-auth or
+mock api 사이트 사용 // 로그인 api 사용 가능
+firebase
+
+- 로그인 뷰 짜기
+1. email 입력 받기 
+2. pw 입력 받기 
+3. 누르면 api 호출하기 위한 버튼 만들기 
+
+- 뷰에서 값 가져오기
+1. 패스워드가 최소 4글자 이상이 되도록
+2. 이메일의 형식 검사 추가하기 
+
+- axios 써서 요청 보내기 
+1. GET으로 요청 보내기
+2. data 받아서 access_token에 뿌리기 
+
+
+- localStorage에 mock api에서 받아온 access_token을 넣기 
+
+- 시간나면(페이지분리,전역상태관리)
+
+
+// request 할 때, 헤더 설정해주기 - 인터셉터에 
+// const userStatus라는 함수 만들어서 - 로그인 했을 때, 안했을 때 (Login/ Logout)

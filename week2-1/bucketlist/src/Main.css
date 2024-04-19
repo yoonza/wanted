@@ -1,0 +1,97 @@
+/* Main.css */
+
+.bucket-list-container {
+    height: 600px;
+    width: 400px;
+    border: 2px solid gray;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 3px;
+    background-color: #f9f9f9; /* 배경색 추가 */
+    padding: 20px; /* 내부 여백 추가 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+}
+
+.bucket-list-container h1 {
+    color: #333; /* 제목 색상 변경 */
+    margin-bottom: 20px; /* 아래 여백 추가 */
+}
+
+.bucket-item-box {
+    width: 300px;
+    height: 50px;
+    border: none;
+    background-color: #ddd;
+    margin: 10px auto; /* 아이템 간격 조정 */
+    border-radius: 3px;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 아이템 그림자 효과 추가 */
+}
+a {
+    text-decoration: none;
+}
+
+.bucket-item-box p {
+    color: #333; /* 아이템 텍스트 색상 변경 */
+    font-weight: bold; /* 텍스트 굵게 설정 */
+}
+
+.input-container {
+    width: 420px;
+    height: 50px;
+    border: 2px solid gray;
+    margin: 20px auto;
+    border-radius: 3px;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    background-color: #f9f9f9; /* 배경색 추가 */
+    padding: 10px; /* 내부 여백 추가 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+}
+
+.input-container input[type="text"] {
+    flex: 1; /* 입력 필드가 남은 공간을 모두 차지하도록 설정 */
+    border: none;
+    outline: none; /* 포커스 시 외곽선 제거 */
+    padding: 10px; /* 내부 여백 추가 */
+    border-radius: 3px;
+}
+
+.input-container button {
+    border: none;
+    background-color: #76df6d; /* 버튼 배경색 변경 */
+    color: white; /* 버튼 텍스트 색상 변경 */
+    padding: 10px 20px; /* 버튼 내부 여백 추가 */
+    border-radius: 3px;
+    cursor: pointer; /* 커서를 포인터로 변경 */
+    transition: background-color 0.3s ease; /* 배경색 전환 효과 */
+}
+
+.input-container button:hover {
+    background-color: #ddd; /* 호버 시 배경색 변경 */
+}
+.bucket-item-box button {
+    background-color: #ff6666;
+    color: #fff;
+    border: none;
+    padding: 4px 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .bucket-item-box button:hover {
+    background-color: #ff4d4d;
+  }
+
+  .completed {
+    background-color: gray; /* 완료된 항목의 배경색 */
+  } 
+  

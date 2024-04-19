@@ -1,0 +1,88 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.box-container {
+  display: flex;
+  flex-direction: column; /* 세로로 요소들을 배치합니다. */
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  margin-bottom: 20px; /* 각각의 박스 사이에 간격을 둡니다. */
+  border: 1px solid black;
+  text-align: center;
+}
+
+.todo-content {
+  display: flex;
+  align-items: center; /* 수직 가운데 정렬 */
+  justify-content: center; /* 수평 가운데 정렬 */
+  height: 100%; /* 부모 요소에 맞추기 위해 */
+}
+
+.input-container {
+  margin-left: 35%; /* 입력 창과 버튼을 오른쪽에 배치합니다. */
+  margin-bottom: 80%;
+}
+
+input {
+  margin-right: 10px; /* 입력 창과 버튼 사이에 간격을 둡니다. */
+  border-color: #ccc;
+  border-radius: 10%;
+}
+
+.button {
+  background-color: #2DB400;
+  border-radius: 10%;
+  border-color: #ccc;
+  color: white;
+}
+
+.clear {
+  border-color: #ccc;
+  align-items: bottom;
+}
